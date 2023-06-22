@@ -19,6 +19,10 @@ body {
 	min-height: 100vh;
 }
 
+.content {
+	padding-bottom: 150px;
+}
+
 /*start header styling*/
 .header {	
 	color: #83dfb2;
@@ -80,7 +84,7 @@ body {
 	cursor: pointer;
 }
 
-/*version-specific bg colors*/
+/*collection-specific bg colors*/
 .v3 {
 	background-color: #83dfb2;
 }
@@ -98,4 +102,60 @@ body {
 
 .banner-wrapper {
 	background: linear-gradient(#000000,#00000000);
+	margin-bottom: 1.5em;
+}
+
+/*filters*/
+select, option {
+	color: #212529;
+}
+
+.filter-sort-wrapper {
+	font-family: "Ubuntu Mono";
+}
+
+.sorter option {
+	background-color: #d7fae9;
+}
+
+.input-group-append, .select {
+	height: 28px;
+}
+
+.btn-outline {
+	padding: 0 0.25rem;
+    border-radius: 0 8px 8px 0;
+    border-left: none;
+    background-color: #83dfb2;
+    color:#212529;
+}
+
+.select {
+	border-radius: 8px 0 0 8px;
+	width: 200px;
+	border-right: none;
+	background-color: #d7fae9;
+}
+
+.filter-dropdown {
+	display: inline-flex;
+	margin: 1em 1em 0 0;
+}
+
+#view, #hide, .sorter {
+	background-color: #83dfb2;
+	border: solid 1px #83dfb2;
+	border-radius: 8px;
+	padding: 2px 6px;
+	margin: 0 0 0 1em;
+	height: 1.75em;
+}
+
+#id {
+	background-color: #d7fae9;
+	border: solid 1px #d7fae9;
+	border-radius: 8px;
+	padding: 2px 6px;
+	height: 1.75em;
+	width: 8em;
 }

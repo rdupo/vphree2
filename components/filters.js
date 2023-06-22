@@ -1,13 +1,17 @@
 //filters
 const filterTemplate = document.createElement('template');
 filterTemplate.innerHTML = `
-<div>
-	<div class="search">
-		<label for="id">Phunk ID</label>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Silkscreen|Ubuntu+Mono|Roboto+Mono">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<div class="filter-sort-wrapper">
+	<div class="mb-3">
+		<label for="id">ID</label>
 		<input type="text" id="id" name="id" minlength="1" maxlength="4" placeholder="Phunk ID..." onkeyup="pid()">
 		<button id="view" onclick="togl(['view','hide','filters']);">View Filters</button>
-		<button id="hide" class="hide-me" onclick="togl(['view','hide','filters']);">Hide Filters</button>
-		<select class="select sorter" type="text" name="sort" id="sort" onchange="ar();">
+		<button id="hide" class="d-none" onclick="togl(['view','hide','filters']);">Hide Filters</button>
+		<select class="sorter" type="text" name="sort" id="sort" onchange="ar();">
 			<option disabled selected hidden>Sort</option>
 			<option value="pa">Price Low - High</option>
 			<option value="pd">Price High - Low</option>
@@ -17,8 +21,8 @@ filterTemplate.innerHTML = `
 			<option value="td">Traits High - Low</option>
 		</select>
 	</div>
-	<div id="filters" class="hide-me">
-		<div class="input-group" data-filter="beard">
+	<div id="filters" class="d-none">
+		<div class="p-0 filter-dropdown" data-filter="beard">
 			<select class="select" type="text" name="beard" id="beard" onchange="trait(this.id);">
 				<option value="" disabled selected hidden>Beard</option>
 				<option value="NA">None</option>
@@ -36,30 +40,30 @@ filterTemplate.innerHTML = `
 				<option value="Shadow-Beard">Shadow Beard</option>
 			</select>
 			<div class="input-group-append">
-				<button class="btn btn-outline-secondary" id="beardx" type="button" onclick="cleer('beard'); reset('data-beard')">x</button>
+				<button class="btn btn-outline" id="beardx" type="button" onclick="cleer('beard'); reset('data-beard')">x</button>
 			</div>
 		</div>
-		<div class="input-group" data-type="cheeks">
+		<div class="p-0 filter-dropdown" data-type="cheeks">
 			<select class="select" type="text" name="cheeks" id="cheeks" onchange="trait(this.id);">
 				<option value="" disabled selected hidden>Cheeks</option>
 				<option value="NA">None</option>
 				<option value="Rosy-Cheeks">Rosy Cheeks</option>
 			</select>
 			<div class="input-group-append">
-				<button class="btn btn-outline-secondary" id="cheeksx" type="button" onclick="cleer('cheeks');">x</button>
+				<button class="btn btn-outline" id="cheeksx" type="button" onclick="cleer('cheeks');">x</button>
 			</div>
 		</div>
-		<div class="input-group" data-type="ears">
+		<div class="p-0 filter-dropdown" data-type="ears">
 			<select class="select" type="text" name="ears" id="ears" onchange="trait(this.id);">
 				<option value="" disabled selected hidden>Ears</option>
 				<option value="NA">None</option>
 				<option value="Earring">Earring</option>
 			</select>
 			<div class="input-group-append">
-				<button class="btn btn-outline-secondary" id="earsx" type="button" onclick="cleer('ears');">x</button>
+				<button class="btn btn-outline" id="earsx" type="button" onclick="cleer('ears');">x</button>
 			</div>
 		</div>
-		<div class="input-group" data-type="emotion">
+		<div class="p-0 filter-dropdown" data-type="emotion">
 			<select class="select" type="text" name="emotion" id="emotion" onchange="trait(this.id);">
 				<option value="" disabled selected hidden>Emotion</option>
 				<option value="NA">None</option>
@@ -67,10 +71,10 @@ filterTemplate.innerHTML = `
 				<option value="Smile">Smile</option>
 			</select>
 			<div class="input-group-append">
-				<button class="btn btn-outline-secondary" id="emox" type="button" onclick="cleer('emotion');">x</button>
+				<button class="btn btn-outline" id="emox" type="button" onclick="cleer('emotion');">x</button>
 			</div>
 		</div>
-		<div class="input-group" data-type="eyes">
+		<div class="p-0 filter-dropdown" data-type="eyes">
 			<select class="select" type="text" name="eyes" id="eyes" onchange="trait(this.id);">
 				<option value="" disabled selected hidden>Eyes</option>
 				<option value="NA">None</option>
@@ -92,10 +96,10 @@ filterTemplate.innerHTML = `
 				<option value="Welding-Goggles">Welding Goggles</option>
 			</select>
 			<div class="input-group-append">
-				<button class="btn btn-outline-secondary" id="eyesx" type="button" onclick="cleer('eyes');">x</button>
+				<button class="btn btn-outline" id="eyesx" type="button" onclick="cleer('eyes');">x</button>
 			</div>
 		</div>
-		<div class="input-group" data-type="face">
+		<div class="p-0 filter-dropdown" data-type="face">
 			<select class="select" type="text" name="face" id="face" onchange="trait(this.id);">
 				<option value="" disabled selected hidden>Face</option>
 				<option value="NA">None</option>
@@ -103,10 +107,10 @@ filterTemplate.innerHTML = `
 				<option value="Spots">Spots</option>
 			</select>
 			<div class="input-group-append">
-				<button class="btn btn-outline-secondary" id="facex" type="button" onclick="cleer('face');">x</button>
+				<button class="btn btn-outline" id="facex" type="button" onclick="cleer('face');">x</button>
 			</div>
 		</div>
-		<div class="input-group" data-type="hair">
+		<div class="p-0 filter-dropdown" data-type="hair">
 			<select class="select" type="text" name="hair" id="hair" onchange="trait(this.id);">
 				<option value="" disabled selected hidden>Hair</option>
 				<option value="NA">None</option>
@@ -153,10 +157,10 @@ filterTemplate.innerHTML = `
 				<option value="Wild-White-Hair">Wild White Hair</option>
 			</select>
 			<div class="input-group-append">
-				<button class="btn btn-outline-secondary" id="hairx" type="button" onclick="cleer('hair');">x</button>
+				<button class="btn btn-outline" id="hairx" type="button" onclick="cleer('hair');">x</button>
 			</div>
 		</div>
-		<div class="input-group" data-type="lips">
+		<div class="p-0 filter-dropdown" data-type="lips">
 			<select class="select" type="text" name="lips" id="lips" onchange="trait(this.id);">
 				<option value="" disabled selected hidden>Lips</option>
 				<option value="NA">None</option>
@@ -165,10 +169,10 @@ filterTemplate.innerHTML = `
 				<option value="Purple-Lipstick">Purple Lipstick</option>
 			</select>
 			<div class="input-group-append">
-				<button class="btn btn-outline-secondary" id="lipsx" type="button" onclick="cleer('lips');">x</button>
+				<button class="btn btn-outline" id="lipsx" type="button" onclick="cleer('lips');">x</button>
 			</div>
 		</div>
-		<div class="input-group" data-type="mouth">
+		<div class="p-0 filter-dropdown" data-type="mouth">
 			<select class="select" type="text" name="mouth" id="mouth" onchange="trait(this.id);">
 				<option value="" disabled selected hidden>Mouth</option>
 				<option value="NA">None</option>
@@ -178,10 +182,10 @@ filterTemplate.innerHTML = `
 				<option value="Vape">Vape</option>
 			</select>
 			<div class="input-group-append">
-				<button class="btn btn-outline-secondary" id="mouthx" type="button" onclick="cleer('mouth');">x</button>
+				<button class="btn btn-outline" id="mouthx" type="button" onclick="cleer('mouth');">x</button>
 			</div>
 		</div>
-		<div class="input-group" data-type="neck">
+		<div class="p-0 filter-dropdown" data-type="neck">
 			<select class="select" type="text" name="neck" id="neck" onchange="trait(this.id);">
 				<option value="" disabled selected hidden>Neck</option>
 				<option value="NA">None</option>
@@ -190,20 +194,20 @@ filterTemplate.innerHTML = `
 				<option value="Silver-Chain">Silver Chain</option>
 			</select>
 			<div class="input-group-append">
-				<button class="btn btn-outline-secondary" id="neckx" type="button" onclick="cleer('neck');">x</button>
+				<button class="btn btn-outline" id="neckx" type="button" onclick="cleer('neck');">x</button>
 			</div>
 		</div>
-		<div class="input-group" data-type="nose">
+		<div class="p-0 filter-dropdown" data-type="nose">
 			<select class="select" type="text" name="nose" id="nose" onchange="trait(this.id);">
 				<option value="" disabled selected hidden>Nose</option>
 				<option value="NA">None</option>
 				<option value="Clown-Nose">Clown Nose</option>
 			</select>
 			<div class="input-group-append">
-				<button class="btn btn-outline-secondary" id="nosex" type="button" onclick="cleer('nose');">x</button>
+				<button class="btn btn-outline" id="nosex" type="button" onclick="cleer('nose');">x</button>
 			</div>
 		</div>
-		<div class="input-group" data-type="sex">
+		<div class="p-0 filter-dropdown" data-type="sex">
 			<select class="select" type="text" name="sex" id="sex" onchange="trait(this.id);">
 				<option value="" disabled selected hidden>Sex</option>
 				<option value="Alien">Alien</option>
@@ -213,20 +217,20 @@ filterTemplate.innerHTML = `
 				<option value="Zombie">Zombie</option>
 			</select>
 			<div class="input-group-append">
-				<button class="btn btn-outline-secondary" id="sexx" type="button" onclick="cleer('sex');">x</button>
+				<button class="btn btn-outline" id="sexx" type="button" onclick="cleer('sex');">x</button>
 			</div>
 		</div>
-		<div class="input-group" data-type="teeth">
+		<div class="p-0 filter-dropdown" data-type="teeth">
 			<select class="select" type="text" name="teeth" id="teeth" onchange="trait(this.id);">
 				<option value="" disabled selected hidden>Teeth</option>
 				<option value="NA">None</option>
 				<option value="Buck-Teeth">Buck Teeth</option>
 			</select>
 			<div class="input-group-append">
-				<button class="btn btn-outline-secondary" id="teethx" type="button" onclick="cleer('teeth');">x</button>
+				<button class="btn btn-outline" id="teethx" type="button" onclick="cleer('teeth');">x</button>
 			</div>
 		</div>
-		<div class="input-group" data-type="traits">
+		<div class="p-0 filter-dropdown" data-type="traits">
 			<select class="select" type="text" name="atts" id="atts" onchange="trait(this.id);">
 				<option value="" disabled selected hidden>Trait Count</option>
 				<option value="0">0 Trait</option>
@@ -239,7 +243,7 @@ filterTemplate.innerHTML = `
 				<option value="7">7 Traits</option>
 			</select>
 			<div class="input-group-append">
-				<button class="btn btn-outline-secondary" id="traitsx" type="button" onclick="cleer('atts');">x</button>
+				<button class="btn btn-outline" id="traitsx" type="button" onclick="cleer('atts');">x</button>
 			</div>
 		</div>
 	</div>

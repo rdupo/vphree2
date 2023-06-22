@@ -6,12 +6,12 @@ headerTemplate.innerHTML = `
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<div class="header d-flex">
 		<div class="mr-auto brite">
-			<img class="d-inline-flex align-middle my-3 ml-3 h-img" src="assets/vphreeLogo.png">
+			<img class="d-inline-flex align-middle my-3 ml-4 h-img" src="assets/vphreeLogo.png">
 			<h1 class="d-inline-flex align-middle h-txt">vphree</h1>
 		</div>
 		<div class="justify-content-end">
 			<img class="d-inline-flex align-middle my-3 mr-3 h-img brite" src="assets/vphreeLogo.png">
-			<img class="d-inline-flex align-middle my-3 mr-3 h-img brite" src="assets/vphreeLogo.png">
+			<img class="d-inline-flex align-middle my-3 mr-4 h-img brite" src="assets/profile-icon.png">
 		</div>
 	</div>
 `
