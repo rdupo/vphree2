@@ -24,6 +24,39 @@ a:hover {
 	cursor: pointer;
 }
 
+/*bg colors*/
+.v3-bg {
+	background-color: #83dfb2;
+}
+
+.lite-v3-bg, .sorter option {
+	background-color: #d7fae9;
+}
+
+.philip-bg {
+	background-color: #648596;
+}
+
+.black-bg {
+	background-color: #000;
+}
+
+/*font colors*/
+.v3-txt {
+	color: #83dfb2;
+}
+
+.drk-grey-txt, select, option {
+	color: #9e9e9e;
+}
+
+select, option {
+	color: #000;
+}
+
+/*-------- START CLEANUP HERE ---------------*/
+
+/*page styles*/
 .page {
 	position: relative;
 	min-height: 100vh;
@@ -34,11 +67,6 @@ a:hover {
 }
 
 /*start header styling*/
-.header {	
-	color: #83dfb2;
-	background-color: #000;
-}
-
 .h-txt {
 	font-size: 40px;
 }
@@ -52,8 +80,6 @@ a:hover {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
-	background-color: #000;
-	color: #9e9e9e;
 }
 
 /*homepage*/
@@ -73,7 +99,6 @@ a:hover {
 .home-title {
 	font-size: 60px;
 	font-weight: 800;
-	color: #83dfb2;
 }
 
 .home-body {
@@ -83,25 +108,14 @@ a:hover {
 /*buttons*/
 .cta {
 	border-radius: 40px;
-	background-color: red;
 	padding: 10px 20px;
 	font-size: 20px;
 	margin: 20px 20px 0 0;
 }
 
-.cta:hover, .brite:hover, a:hover {
+.cta:hover, .brite:hover, .input-group-append:hover {
 	filter: brightness(1.33);
 	cursor: pointer;
-}
-
-/*collection-specific bg colors*/
-.v3 {
-	background-color: #83dfb2;
-}
-
-.philip {
-	background-color: #648596;
-	/*background-color: #a79aff*/
 }
 
 /*collection*/
@@ -115,25 +129,13 @@ a:hover {
 	margin-bottom: 1.5em;
 }
 
-.collection-info > h1 {
-	color: #83dfb2;
-}
-
 .collection-desc {
 	font-family: "Ubuntu Mono";
 }
 
 /*filters*/
-select, option {
-	color: #212529;
-}
-
 .filter-sort-wrapper {
 	font-family: "Ubuntu Mono";
-}
-
-.sorter option {
-	background-color: #d7fae9;
 }
 
 .input-group-append, .select {
@@ -144,15 +146,12 @@ select, option {
 	padding: 0 0.25rem;
     border-radius: 0 8px 8px 0;
     border-left: none;
-    background-color: #83dfb2;
-    color:#212529;
 }
 
 .select {
 	border-radius: 8px 0 0 8px;
 	width: 200px;
 	border-right: none;
-	background-color: #d7fae9;
 }
 
 .filter-dropdown {
@@ -161,7 +160,6 @@ select, option {
 }
 
 #view, #hide, .sorter {
-	background-color: #83dfb2;
 	border: solid 1px #83dfb2;
 	border-radius: 8px;
 	padding: 2px 6px;
@@ -170,7 +168,6 @@ select, option {
 }
 
 #id {
-	background-color: #d7fae9;
 	border: solid 1px #d7fae9;
 	border-radius: 8px;
 	padding: 2px 6px;
