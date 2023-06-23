@@ -14,6 +14,16 @@ body {
 	font-family: Silkscreen, sans-serif;
 }
 
+a {
+	color: #83dfb2;
+}
+
+a:hover {
+	color: #83dfb2;
+	filter: brightness(1.33);
+	cursor: pointer;
+}
+
 .page {
 	position: relative;
 	min-height: 100vh;
@@ -79,7 +89,7 @@ body {
 	margin: 20px 20px 0 0;
 }
 
-.cta:hover, .brite:hover {
+.cta:hover, .brite:hover, a:hover {
 	filter: brightness(1.33);
 	cursor: pointer;
 }
@@ -103,6 +113,14 @@ body {
 .banner-wrapper {
 	background: linear-gradient(#000000,#00000000);
 	margin-bottom: 1.5em;
+}
+
+.collection-info > h1 {
+	color: #83dfb2;
+}
+
+.collection-desc {
+	font-family: "Ubuntu Mono";
 }
 
 /*filters*/
