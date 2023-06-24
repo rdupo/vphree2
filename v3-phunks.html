@@ -10,6 +10,7 @@
 	<script src="./components/header.js"></script>
 	<script src="./components/footer.js"></script>	
 	<script src="./components/filters.js"></script>
+	<script src="./components/collection-info.js"></script>
 	<title>VPHREE | V3PHUNKS</title>
 </head>
 <body>
@@ -19,12 +20,10 @@
 			<img class="col-banner" src="./assets/v3-banner.png" width="100%">
 		</div>
 		<div class="content mx-4">
-			<div class="collection-info mb-5">
-				<h1 class="v3-txt">v3Phunks</h1>
-				<div class="collection-desc">
-					<p>v3Phunks are a low entry-point evolution of the CryptoPhunks ecosystem. 10,000 Phunks minting for .005ETH each with absolutely 100% of proceeds going directly and trustlessly to <a href="https://maps.org/" target="_blank">MAPS</a>, a mental health organization. A Philanthropic, Phree, and Phunky arm of the overall CryptoPhunk community.</p>
-				</div>
-			</div>
+			<comp-collection-info
+				title="v3Phunks"
+				desc='v3Phunks are a low entry-point evolution of the CryptoPhunks ecosystem. 10,000 Phunks minting for .005ETH each with absolutely 100% of proceeds going directly and trustlessly to <a href="https://maps.org/" target="_blank">MAPS</a>, a mental health organization. A Philanthropic, Phree, and Phunky arm of the overall CryptoPhunk community.'
+			></comp-collection-info>
 			<comp-filter></comp-filter>
 		</div>		
 		<comp-footer></comp-footer>
