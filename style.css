@@ -75,6 +75,14 @@ select, option {
 	height: 40px;
 }
 
+.h-img-w {
+	width: 35px;
+}
+
+.sans-underline:hover {
+	text-decoration: none!important;
+}
+
 /*start footer styling*/
 .footer {
 	position: absolute;
