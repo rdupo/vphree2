@@ -15,7 +15,9 @@ headerTemplate.innerHTML = `
 			<a href="https://discord.gg/phunks" target="_blank" class="sans-underline">
 				<img class="d-inline-flex align-middle my-3 mr-3 h-img-w brite" src="assets/discord.png">
 			</a>
-			<img class="d-inline-flex align-middle my-3 mr-3 h-img-w brite" src="assets/wallet.png">
+			<img class="d-inline-flex align-middle my-3 mr-3 h-img-w brite" 
+			src="assets/wallet.png"
+			onclick="connectWallet()">
 			<a href="/profile">
 				<img class="d-inline-flex align-middle my-3 mr-4 h-img brite" src="assets/profile-icon.png">
 			</a>
