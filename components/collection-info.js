@@ -22,7 +22,7 @@ class Cinfo extends HTMLElement {
 						<a href="${twitter}" target="_blank" class="sans-underline">
 							<img class="d-inline-flex align-middle my-3 mr-3 h-img-w brite" src="assets/twitter.png">
 						</a>
-						<a href="${contract}" target="_blank" class="sans-underline">
+						<a href="https://etherscan.io/address/${contract}" target="_blank" class="sans-underline">
 							<img class="d-inline-flex align-middle my-3 h-img-w brite" src="assets/etherscan.png">
 						</a>
 					</div>
