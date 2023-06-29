@@ -15,6 +15,9 @@ class purchase extends HTMLElement {
     	let bid = this.attributes.bid.value;
     	let txnHistory = this.attributes.txnHistory.value;
     	purchaseTemplate.innerHTML = `
+    	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Silkscreen|Ubuntu+Mono|Roboto+Mono">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="style.css">
     	<div class="content mx-4">
 			<div class="row-wrapper d-block px-0 mt-4">
 				<div class="nft-info col-md-4 d-inline-block pl-0 align-top">
