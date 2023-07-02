@@ -11,6 +11,8 @@
 	<script src="./components/footer.js"></script>	
 	<script src="./components/filters.js"></script>
 	<script src="./components/collection-info.js"></script>
+	<script src="./components/card.js"></script>
+	<script src="v3-filter.js" defer></script>
 	<title>VPHREE</title>
 </head>
 <body>
@@ -27,6 +29,19 @@
 				desc='v3Phunks are a low entry-point evolution of the CryptoPhunks ecosystem. 10,000 Phunks minting for .005ETH each with absolutely 100% of proceeds going directly and trustlessly to <a href="https://maps.org/" target="_blank">MAPS</a>, a mental health organization. A Philanthropic, Phree, and Phunky arm of the overall CryptoPhunk community.'
 			></comp-collection-info>
 			<comp-filter></comp-filter>
+			<div id="assets"></div>
+			<div class="pagination my-3">
+				<span class="mx-2 v3-txt brite" onclick="list(phunks, 0, 1000);">1</span>|
+				<span class="mx-2 v3-txt brite" onclick="list(phunks, 1000, 2000);">2</span>|
+				<span class="mx-2 v3-txt brite" onclick="list(phunks, 2000, 3000);">3</span>|
+				<span class="mx-2 v3-txt brite" onclick="list(phunks, 3000, 4000);">4</span>|
+				<span class="mx-2 v3-txt brite" onclick="list(phunks, 4000, 5000);">5</span>|
+				<span class="mx-2 v3-txt brite" onclick="list(phunks, 5000, 6000);">6</span>|
+				<span class="mx-2 v3-txt brite" onclick="list(phunks, 6000, 7000);">7</span>|
+				<span class="mx-2 v3-txt brite" onclick="list(phunks, 7000, 8000);">8</span>| 
+				<span class="mx-2 v3-txt brite" onclick="list(phunks, 8000, 9000);">9</span>|
+				<span class="mx-2 v3-txt brite" onclick="list(phunks, 9000, 10000);">10</span>
+			</div>
 		</div>		
 		<comp-footer></comp-footer>
 	</div>

@@ -46,11 +46,15 @@ a:hover {
 	color: #83dfb2;
 }
 
+.lite-v3-txt {
+  color: #d7fae9;
+}
+
 .drk-grey-txt, select, option {
 	color: #9e9e9e;
 }
 
-select, option {
+select, option, .black-txt {
 	color: #000;
 }
 
@@ -154,12 +158,12 @@ select, option {
 
 .btn-outline {
 	padding: 0 0.25rem;
-    border-radius: 0 8px 8px 0;
-    border-left: none;
+  /*border-radius: 0 8px 8px 0;*/
+  border-left: none;
 }
 
 .select {
-	border-radius: 8px 0 0 8px;
+	/*border-radius: 8px 0 0 8px;*/
 	width: 200px;
 	border-right: none;
 }
@@ -171,7 +175,7 @@ select, option {
 
 #view, #hide, .sorter {
 	border: solid 1px #83dfb2;
-	border-radius: 8px;
+	/*border-radius: 8px;*/
 	padding: 2px 6px;
 	margin: 0 0 0 1em;
 	height: 1.75em;
@@ -179,7 +183,7 @@ select, option {
 
 #id {
 	border: solid 1px #d7fae9;
-	border-radius: 8px;
+	/*border-radius: 8px;*/
 	padding: 2px 6px;
 	height: 1.75em;
 	width: 8em;

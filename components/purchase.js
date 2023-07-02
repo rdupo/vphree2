@@ -40,9 +40,9 @@ class purchase extends HTMLElement {
 						<p>Top Bid: ${bid}</p>
 					</div>
 					<div class="buy-bid-buttons">
-						<button class="v3-bg w-100 p-1 my-2">BUY</button>
+						<button class="brite v3-bg w-100 p-1 my-2">BUY</button>
 						<br>
-						<button class="v3-bg w-100 p-1 my-2">BID</button>
+						<button class="brite v3-bg w-100 p-1 my-2">BID</button>
 						<br>
 						<div class="enter-bid-amount">
 							<input
@@ -51,12 +51,12 @@ class purchase extends HTMLElement {
 								name="bid-amount" 
 								placeholder="bid amount">
 							<br>
-							<button class="v3-bg w-100 p-1 my-2">PLACE BID</button>
+							<button class="brite v3-bg w-100 p-1 my-2">PLACE BID</button>
 						</div>
-						<button class="v3-bg w-100 p-1 my-2">CANCEL BID</button>
+						<button class="brite v3-bg w-100 p-1 my-2">CANCEL BID</button>
 					</div>
 					<div class="seller-buttons">
-						<button class="v3-bg w-100 p-1 my-2">LIST</button>
+						<button class="brite v3-bg w-100 p-1 my-2">LIST</button>
 						<br>
 						<div class="enter-list-amount">
 							<input 
@@ -65,11 +65,11 @@ class purchase extends HTMLElement {
 								name="list-amount" 
 								placeholder="list price">
 							<br>
-							<button class="v3-bg w-100 p-1 my-2">LIST</button>
+							<button class="brite v3-bg w-100 p-1 my-2">LIST</button>
 						</div>
-						<button class="v3-bg w-100 p-1 my-2">DELIST</button>
+						<button class="brite v3-bg w-100 p-1 my-2">DELIST</button>
 						<br>
-						<button class="v3-bg w-100 p-1 my-2">ACCEPT BID</button>
+						<button class="brite v3-bg w-100 p-1 my-2">ACCEPT BID</button>
 					</div>
 				</div>
 			</div>
