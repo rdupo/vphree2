@@ -15,7 +15,7 @@ class Cinfo extends HTMLElement {
 			<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Silkscreen|Ubuntu+Mono|Roboto+Mono">
 			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 			<link rel="stylesheet" type="text/css" href="style.css">
-			<div class="collection-info mb-5 col-md-9">
+			<div class="collection-info mb-5 col-md-9 px-0">
 				<div class="d-flex">
 					<h1 class="v3-txt mr-auto">${title}</h1>
 					<div class="justify-content-end">
