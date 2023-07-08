@@ -18,7 +18,7 @@ headerTemplate.innerHTML = `
 			<img class="d-inline-flex align-middle my-3 mr-3 h-img-w brite" 
 			src="assets/wallet.png"
 			onclick="connectWallet()">
-			<a href="/profile">
+			<a href="/vphree2/profile">
 				<img class="d-inline-flex align-middle my-3 mr-4 h-img brite" src="assets/profile-icon.png">
 			</a>
 		</div>
