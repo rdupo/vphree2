@@ -190,10 +190,15 @@ select, option, .black-txt {
 }
 
 /*nft card*/
-
 .card-wrapper {
   border: 4px solid #000;
   width: 140px;
+}
+
+/*purchase modal*/
+#mod-wrapper {
+  position: fixed;
+  top: 5%;
 }
 
 /*pixelated corners*/
