@@ -10,6 +10,7 @@
 	<script src="./components/header.js"></script>
 	<script src="./components/footer.js"></script>
 	<script src="philip-list.js"></script>	
+	<script src="script.js"></script>
 	<title>VPHREE</title>
 </head>
 <body>
@@ -22,7 +23,7 @@
 				</div>
 				<div class="metadata col-md-4 d-inline-block align-top">
 					<div class="id-and-owner">
-						<h3 id="title">PhilipInternProject #---</h3>
+						<h3 id="title">Philip #---</h3>
 						<p>Owner: <a href="/profile#" id="owner">---</a></p>
 					</div>
 					<div class="metadata" id="md"></div>
@@ -75,11 +76,12 @@
 		<script type="text/javascript">
 			const p = window.location.hash.substr(1);
 			const iw = document.createElement('img');
-			iw.src = phils[p].image_url;
+			const pd = phils.filter(a => a.tokenId == p);
+			iw.src = pd[0].image_url;
 			iw.class = 'w-100';
-			document.getElementById('title').innerHTML = 'v3phunk #' + p;
+			document.getElementById('title').innerHTML = 'Philip #' + p;
 			document.getElementById('img-wrapper').appendChild(iw);
-			document.getElementById('md').innerHTML = phils[p].md;
+			document.getElementById('md').innerHTML = pd[0].md;
 		</script>		<!--end of nft info-->
 		<comp-footer></comp-footer>
 	</div>

@@ -35,64 +35,64 @@ async function offerPhunkForSale() {
   if (marketplace approved) {next}
   else {setApproval} */
 
-  const setApproval = await v3Contract.setApprovalForAll(contractAddress, true);
+  const setApproval = await v3Addy.setApprovalForAll(contractAddress, true);
   await setApproval.wait();
 
   const ethPrice = ethers.utils.parseEther(document.getElementById("sell-amt").value);
   const listPrice = parseInt(ethPrice._hex);
-  const phunkId = document.getElementById("i-phunk-id").getAttribute("data-id");
-  const listPromise = contract.offerPhunkForSale(phunkId, listPrice);
+  const phunkId = phunkId = window.location.hash.substr(1);
+  const listPromise = market.offerPhunkForSale(phunkId, listPrice);
   await listPromise;
 }
 
 // delist
 async function delistPhunk() {
-  const phunkId = document.getElementById("i-phunk-id").getAttribute("data-id");
-  const delistPromise = contract.phunkNoLongerForSale(phunkId);
+  const phunkId = window.location.hash.substr(1);
+  const delistPromise = market.phunkNoLongerForSale(phunkId);
   await delistPromise;
 }
 
 // accept bid
 async function acceptBidForPhunk() {
-  const setApproval = await v3Contract.setApprovalForAll(contractAddress, true);
+  const setApproval = await v3Addy.setApprovalForAll(contractAddress, true);
   await setApproval.wait();
-  const phunkId = document.getElementById("i-phunk-id").getAttribute("data-id");
-  const c = await contract.phunkBids(phunkId).then(new Response);
+  const phunkId = window.location.hash.substr(1);
+  const c = await market.phunkBids(phunkId).then(new Response);
   const bidPrice = c.value._hex;
-  const acceptBidPromise = contract.acceptBidForPhunk(phunkId, bidPrice);
+  const acceptBidPromise = market.acceptBidForPhunk(phunkId, bidPrice);
   await acceptBidPromise;
 }
 
 // buy
 async function buyPhunk() {
-  const phunkId = document.getElementById("i-phunk-id").getAttribute("data-id");
-  const res = await contract.phunksOfferedForSale(phunkId).then(function(response) {
+  const phunkId = window.location.hash.substr(1);
+  const res = await market.phunksOfferedForSale(phunkId).then(function(response) {
       return response;
     });
   const minVal = res['minValue']._hex
-  const buyPhunkPromise = contract.buyPhunk(phunkId, {value: minVal});
+  const buyPhunkPromise = market.buyPhunk(phunkId, {value: minVal});
   console.log(phunkId, ":", minVal);
   await buyPhunkPromise;
 }
 
 // place bid
 async function bidOnPhunk() {
-  const phunkId = document.getElementById("i-phunk-id").getAttribute("data-id");
+  const phunkId = window.location.hash.substr(1);
   const ethBid = ethers.utils.parseEther(document.getElementById("bid-amt").value);
   const bidVal = parseInt(ethBid._hex);
-  const enterBidPromise = contract.enterBidForPhunk(phunkId, {value: bidVal});
+  const enterBidPromise = market.enterBidForPhunk(phunkId, {value: bidVal});
   await enterBidPromise;  
 }
 
 // cancel bid
 async function cancelPhunkBid() {
-  const phunkId = document.getElementById("i-phunk-id").getAttribute("data-id");
-  const withdrawBidPromise = contract.withdrawBidForPhunk(phunkId);
+  const phunkId = window.location.hash.substr(1);
+  const withdrawBidPromise = market.withdrawBidForPhunk(phunkId);
   await withdrawBidPromise;
 }
 
 // withdraw eth
 async function withdrawEth() {
-  const withdrawEthPromise = contract.withdraw();
+  const withdrawEthPromise = market.withdraw();
   await withdrawEthPromise;
 }

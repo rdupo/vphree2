@@ -9,7 +9,8 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="./components/header.js"></script>
 	<script src="./components/footer.js"></script>
-	<script src="v3-list.js"></script>	
+	<script src="v3-list.js"></script>
+	<script src="script.js"></script>	
 	<title>VPHREE</title>
 </head>
 <body>
@@ -33,7 +34,7 @@
 						<p>Top Bid: ---</p>
 					</div>
 					<div class="buy-bid-buttons">
-						<button class="v3-bg w-100 p-1 my-2">BUY</button>
+						<button class="v3-bg w-100 p-1 my-2" onclick="buyPhunk();">BUY</button>
 						<br>
 						<button class="v3-bg w-100 p-1 my-2">BID</button>
 						<br>
@@ -41,12 +42,13 @@
 							<input
 								class="lite-v3-bg w-100 p-1 my-2" 
 								type="number" 
-								name="bid-amount" 
-								placeholder="bid amount">
+								name="bid-amt" 
+								placeholder="bid amount"
+								id="bid-amt">
 							<br>
-							<button class="v3-bg w-100 p-1 my-2">PLACE BID</button>
+							<button class="v3-bg w-100 p-1 my-2" onclick="bidOnPhunk();">PLACE BID</button>
 						</div>
-						<button class="v3-bg w-100 p-1 my-2">CANCEL BID</button>
+						<button class="v3-bg w-100 p-1 my-2" onclick="cancelPhunkBid()">CANCEL BID</button>
 					</div>
 					<div class="seller-buttons">
 						<button class="v3-bg w-100 p-1 my-2">LIST</button>
@@ -55,14 +57,15 @@
 							<input 
 								class="lite-v3-bg w-100 p-1 my-2" 
 								type="number" 
-								name="list-amount" 
-								placeholder="list price">
+								name="sell-amt" 
+								placeholder="list price"
+								id="sell-amt">
 							<br>
-							<button class="v3-bg w-100 p-1 my-2">LIST</button>
+							<button class="v3-bg w-100 p-1 my-2" onclick="offerPhunkForSale();">LIST</button>
 						</div>
-						<button class="v3-bg w-100 p-1 my-2">DELIST</button>
+						<button class="v3-bg w-100 p-1 my-2" onclick="delistPhunk();">DELIST</button>
 						<br>
-						<button class="v3-bg w-100 p-1 my-2">ACCEPT BID</button>
+						<button class="v3-bg w-100 p-1 my-2" onclick="acceptBidForPhunk();">ACCEPT BID</button>
 					</div>
 				</div>
 			</div>
