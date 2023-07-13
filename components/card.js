@@ -10,6 +10,7 @@ class card extends HTMLElement {
     	let id = this.attributes.id.value;
     	let atts = this.attributes.atts.value;
     	let price = this.attributes.price.value;
+    	let proj = this.attributes.proj.value;
     	cardTemplate.innerHTML = `
     		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Silkscreen|Ubuntu+Mono|Roboto+Mono">
 			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -18,7 +19,7 @@ class card extends HTMLElement {
     			 data-price="${price}" 
     			 data-atts="${atts}"
     			 id="${id}"
-    			 href="/vphree2/phunk#${id}">
+    			 href="/vphree2/${proj}#${id}">
 				<div class="img-wrapper v3-bg">
 					<img class="w-100" src="${img}" loading="lazy">
 				</div> 

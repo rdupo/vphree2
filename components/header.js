@@ -6,7 +6,7 @@ headerTemplate.innerHTML = `
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<div class="v3-txt black-bg d-flex">
 		<div class="mr-auto brite">
-			<a href="/" class="sans-underline">
+			<a href="/vphree2" class="sans-underline">
 				<img class="d-inline-flex align-middle my-3 ml-4 h-img" src="assets/vphreeLogo.png">
 				<h1 class="d-inline-flex align-middle h-txt">vphree</h1>
 			</a>

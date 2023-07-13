@@ -1049,6 +1049,7 @@ function list(x, lo, hi) {
     card.setAttribute('id', x[i].tokenId);
     card.setAttribute('atts', x[i].atts);
     card.setAttribute('price', '0.005');
+    card.setAttribute('proj', 'philip');
     document.getElementById('assets').appendChild(card);
   };
 };
