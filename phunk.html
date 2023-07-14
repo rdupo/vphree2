@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="https://cdn.ethers.io/lib/ethers-5.7.umd.min.js"></script>
-	<script src="./components/header.js"></script>
+ 	<script src="./components/header.js"></script>
 	<script src="./components/footer.js"></script>
 	<script src="v3-list.js"></script>
 	<script src="script.js"></script>	
@@ -37,9 +37,9 @@
 					<div class="buy-bid-buttons">
 						<button class="v3-bg w-100 p-1 my-2" onclick="buyPhunk();">BUY</button>
 						<br>
-						<button class="v3-bg w-100 p-1 my-2">BID</button>
+						<button class="v3-bg w-100 p-1 my-2" onclick="togl('enter-bid-amount');">BID</button>
 						<br>
-						<div class="enter-bid-amount">
+						<div class="d-none" id="enter-bid-amount">
 							<input
 								class="lite-v3-bg w-100 p-1 my-2" 
 								type="number" 
@@ -47,14 +47,14 @@
 								placeholder="bid amount"
 								id="bid-amt">
 							<br>
-							<button class="v3-bg w-100 p-1 my-2" onclick="bidOnPhunk();">PLACE BID</button>
+							<button class="black-bg v3-txt v3-b w-100 p-1 my-2" onclick="bidOnPhunk();">PLACE BID</button>
 						</div>
 						<button class="v3-bg w-100 p-1 my-2" onclick="cancelPhunkBid()">CANCEL BID</button>
 					</div>
 					<div class="seller-buttons">
-						<button class="v3-bg w-100 p-1 my-2">LIST</button>
+						<button class="v3-bg w-100 p-1 my-2" onclick="togl('enter-list-amount');">LIST</button>
 						<br>
-						<div class="enter-list-amount">
+						<div id="enter-list-amount" class="d-none">
 							<input 
 								class="lite-v3-bg w-100 p-1 my-2" 
 								type="number" 
@@ -62,7 +62,7 @@
 								placeholder="list price"
 								id="sell-amt">
 							<br>
-							<button class="v3-bg w-100 p-1 my-2" onclick="offerPhunkForSale();">LIST</button>
+							<button class="black-bg v3-txt v3-b w-100 p-1 my-2" onclick="offerPhunkForSale();">LIST</button>
 						</div>
 						<button class="v3-bg w-100 p-1 my-2" onclick="delistPhunk();">DELIST</button>
 						<br>

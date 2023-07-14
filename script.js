@@ -28,6 +28,43 @@ function connectWallet() {
 
 connectWallet();
 
+//toggle class name 
+function togl(id) {
+  for(i in id) {
+    document.getElementById(id[i]).classList.toggle('d-none');
+  };
+};
+
+//display correct buttons
+async function btns(x) {
+  const a = await market.phunksOfferedForSale(x).then(new Response);
+  const b = await v3.ownerOf(x).then(new Response);
+  const c = await market.phunkBids(x).then(new Response);
+
+  //pick up updates here
+  //instead of using show(), use togl() to remove 'd-none' class
+  //will need to add class="d-none" to these buttons to keep logic as-is
+  //ids will also need to be updated to reflect /phunk page
+  if(b == signer._address && a.isForSale == 0){show('sellBtn')};    
+  if(b == signer._address && a.isForSale == 1) {show('delist')};
+  if(b == signer._address && c.hasBid == 1) {show('acceptBtn')};
+
+  if(b != signer._address) {show('pBid')};
+  if(b != signer._address && a.isForSale == 1) {show('buyBtn')};
+  if(signer._address == c.bidder && c.hasBid == 1) {show('cBid')};
+
+  const bid = ethers.utils.formatEther(parseInt(c.value._hex));
+  const pri = ethers.utils.formatEther(parseInt(a.minValue._hex));
+  if(c.hasBid){document.getElementById('bid').textContent='Top Bid: ' + bid + 'Ξ'}
+  if (a.isForSale){document.getElementById('price').textContent='Price: ' + pri + 'Ξ'}
+
+  document.getElementById('curOwner').textContent='Owner: ' + b.substr(0,4)+"..."+b.substr(-4);
+  if (c.hasBid){
+    document.getElementById('topBidder').textContent='High Bidder: ' + c.bidder.substr(0,4)+"..."+c.bidder.substr(-4);
+    document.getElementById('topBidder').classList.remove('hide-me');
+  }
+};
+
 //contract interactions
 // list
 async function offerPhunkForSale() {
@@ -35,7 +72,7 @@ async function offerPhunkForSale() {
   if (marketplace approved) {next}
   else {setApproval} */
 
-  const setApproval = await v3Addy.setApprovalForAll(contractAddress, true);
+  const setApproval = await v3Addy.setApprovalForAll(marketAddy, true);
   await setApproval.wait();
 
   const ethPrice = ethers.utils.parseEther(document.getElementById("sell-amt").value);
@@ -54,7 +91,7 @@ async function delistPhunk() {
 
 // accept bid
 async function acceptBidForPhunk() {
-  const setApproval = await v3Addy.setApprovalForAll(contractAddress, true);
+  const setApproval = await v3Addy.setApprovalForAll(marketAddy, true);
   await setApproval.wait();
   const phunkId = window.location.hash.substr(1);
   const c = await market.phunkBids(phunkId).then(new Response);

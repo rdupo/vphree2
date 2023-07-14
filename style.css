@@ -62,6 +62,11 @@ select, option, .black-txt {
   color: #fff;
 }
 
+/*border*/
+.v3-b {
+  border: 3px solid #83dfb2;
+}
+
 /*page styles*/
 .page {
 	position: relative;
