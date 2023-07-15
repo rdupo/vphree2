@@ -26,8 +26,6 @@ function connectWallet() {
   }); 
 }
 
-connectWallet();
-
 //toggle class name 
 function togl(id) {
   document.getElementById(id).classList.toggle('d-none');
@@ -131,3 +129,6 @@ async function withdrawEth() {
   const withdrawEthPromise = market.withdraw();
   await withdrawEthPromise;
 }
+
+connectWallet();
+btns(window.location.hash.substr(1));
