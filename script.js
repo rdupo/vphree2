@@ -132,3 +132,4 @@ async function withdrawEth() {
 
 connectWallet();
 btns(window.location.hash.substr(1));
+console.log('js executed');
