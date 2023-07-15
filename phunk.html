@@ -25,19 +25,24 @@
 				<div class="metadata col-md-4 d-inline-block align-top">
 					<div class="id-and-owner">
 						<h3 id="title">v3phunk #---</h3>
-						<p>Owner: <a href="/profile#" id="owner">---</a></p>
+						<p>Owner: <a id="owner">---</a></p>
 					</div>
 					<div class="metadata" id="md"></div>
 				</div>
 				<div class="contract-interactions col-md-3 d-inline-block pr-0 align-top">
 					<div class="price-and-bid">
-						<p>Price: ---</p>
-						<p>Top Bid: ---</p>
+						<p id="price">Price: ---</p>
+						<p id="bid" class="d-none">Top Bid: ---</p>
+						<p>Bidder: <a id="top-bidder">---</a></p>
 					</div>
 					<div class="buy-bid-buttons">
-						<button class="v3-bg w-100 p-1 my-2" onclick="buyPhunk();">BUY</button>
+						<button class="v3-bg w-100 p-1 my-2 brite d-none" 
+								onclick="buyPhunk();"
+								id="buy-btn">BUY</button>
 						<br>
-						<button class="v3-bg w-100 p-1 my-2" onclick="togl('enter-bid-amount');">BID</button>
+						<button class="v3-bg w-100 p-1 my-2 brite d-none" 
+								onclick="togl('enter-bid-amount');"
+								id="bid-btn-togl">BID</button>
 						<br>
 						<div class="d-none" id="enter-bid-amount">
 							<input
@@ -47,12 +52,18 @@
 								placeholder="bid amount"
 								id="bid-amt">
 							<br>
-							<button class="black-bg v3-txt v3-b w-100 p-1 my-2" onclick="bidOnPhunk();">PLACE BID</button>
+							<button class="black-bg v3-txt v3-b w-100 p-1 my-2 brite" 
+									onclick="bidOnPhunk();"
+									id="place-bid-btn">PLACE BID</button>
 						</div>
-						<button class="v3-bg w-100 p-1 my-2" onclick="cancelPhunkBid()">CANCEL BID</button>
+						<button class="v3-bg w-100 p-1 my-2 brite d-none"
+								onclick="cancelPhunkBid()"
+								id="cxl-bid-btn">CANCEL BID</button>
 					</div>
 					<div class="seller-buttons">
-						<button class="v3-bg w-100 p-1 my-2" onclick="togl('enter-list-amount');">LIST</button>
+						<button class="v3-bg w-100 p-1 my-2 brite d-none" 
+								onclick="togl('enter-list-amount');"
+								id="list-btn-togl">LIST</button>
 						<br>
 						<div id="enter-list-amount" class="d-none">
 							<input 
@@ -62,11 +73,16 @@
 								placeholder="list price"
 								id="sell-amt">
 							<br>
-							<button class="black-bg v3-txt v3-b w-100 p-1 my-2" onclick="offerPhunkForSale();">LIST</button>
+							<button class="black-bg v3-txt v3-b w-100 p-1 my-2 brite" 
+									onclick="offerPhunkForSale();">LIST</button>
 						</div>
-						<button class="v3-bg w-100 p-1 my-2" onclick="delistPhunk();">DELIST</button>
+						<button class="v3-bg w-100 p-1 my-2 brite d-none" 
+								onclick="delistPhunk();"
+								id="delist-btn">DELIST</button>
 						<br>
-						<button class="v3-bg w-100 p-1 my-2" onclick="acceptBidForPhunk();">ACCEPT BID</button>
+						<button class="v3-bg w-100 p-1 my-2 brite d-none" 
+								onclick="acceptBidForPhunk();"
+								id="accept-bid-btn">ACCEPT BID</button>
 					</div>
 				</div>
 			</div>

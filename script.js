@@ -30,9 +30,7 @@ connectWallet();
 
 //toggle class name 
 function togl(id) {
-  for(i in id) {
-    document.getElementById(id[i]).classList.toggle('d-none');
-  };
+  document.getElementById(id).classList.toggle('d-none');
 };
 
 //display correct buttons
@@ -41,27 +39,27 @@ async function btns(x) {
   const b = await v3.ownerOf(x).then(new Response);
   const c = await market.phunkBids(x).then(new Response);
 
-  //pick up updates here
-  //instead of using show(), use togl() to remove 'd-none' class
-  //will need to add class="d-none" to these buttons to keep logic as-is
-  //ids will also need to be updated to reflect /phunk page
-  if(b == signer._address && a.isForSale == 0){show('sellBtn')};    
-  if(b == signer._address && a.isForSale == 1) {show('delist')};
-  if(b == signer._address && c.hasBid == 1) {show('acceptBtn')};
-
-  if(b != signer._address) {show('pBid')};
-  if(b != signer._address && a.isForSale == 1) {show('buyBtn')};
-  if(signer._address == c.bidder && c.hasBid == 1) {show('cBid')};
+  if(b == signer._address && a.isForSale == 0){togl('list-btn-togl')};    
+  if(b == signer._address && a.isForSale == 1) {togl('delist-btn')};
+  if(b == signer._address && c.hasBid == 1) {togl('accept-bid-btn')};
+  if(b != signer._address) {togl('bid-btn-togl')};
+  if(b != signer._address && a.isForSale == 1) {togl('buy-btn')};
+  if(signer._address == c.bidder && c.hasBid == 1) {togl('cxl-bid-btn')};
 
   const bid = ethers.utils.formatEther(parseInt(c.value._hex));
   const pri = ethers.utils.formatEther(parseInt(a.minValue._hex));
-  if(c.hasBid){document.getElementById('bid').textContent='Top Bid: ' + bid + 'Ξ'}
+  if(c.hasBid){
+    document.getElementById('bid').textContent='Top Bid: ' + bid + 'Ξ';
+    togl('bid');
+  }
   if (a.isForSale){document.getElementById('price').textContent='Price: ' + pri + 'Ξ'}
 
-  document.getElementById('curOwner').textContent='Owner: ' + b.substr(0,4)+"..."+b.substr(-4);
+  document.getElementById('owner').textContent=b.substr(0,4)+"..."+b.substr(-4);
+  document.getElementById('owner').href=`/profile#${b}`;
   if (c.hasBid){
-    document.getElementById('topBidder').textContent='High Bidder: ' + c.bidder.substr(0,4)+"..."+c.bidder.substr(-4);
-    document.getElementById('topBidder').classList.remove('hide-me');
+    document.getElementById('top-bidder').textContent='High Bidder: ' + c.bidder.substr(0,4)+"..."+c.bidder.substr(-4);
+    document.getElementById('top-bidder').href=`/profile#${c.bidder}`;
+    togl('top-bidder');
   }
 };
 
