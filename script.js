@@ -50,7 +50,7 @@ async function btns(x) {
   document.getElementById('owner').href=`/profile#${b}`;
   if (c.hasBid){
     document.getElementById('top-bidder').textContent='High Bidder: ' + c.bidder.substr(0,4)+"..."+c.bidder.substr(-4);
-    document.getElementById('top-bidder').href=`/profile#${c.bidder}`;
+    document.getElementById('top-bidder').href=`/vphree2/profile#${c.bidder}`;
     togl('top-bidder');
   }
 };
