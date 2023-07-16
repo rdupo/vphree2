@@ -37,6 +37,10 @@ a:hover {
 	background-color: #648596;
 }
 
+.v1-bg {
+  background-color: #a79aff;
+}
+
 .black-bg {
 	background-color: #000;
 }
@@ -198,12 +202,6 @@ select, option, .black-txt {
 .card-wrapper {
   border: 4px solid #000;
   width: 140px;
-}
-
-/*purchase modal*/
-#mod-wrapper {
-  position: fixed;
-  top: 5%;
 }
 
 /*pixelated corners*/

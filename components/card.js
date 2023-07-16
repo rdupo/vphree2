@@ -10,6 +10,7 @@ class card extends HTMLElement {
     	let id = this.attributes.id.value;
     	let atts = this.attributes.atts.value;
     	let price = this.attributes.price.value;
+    	if (price != "") {price = price + "Ξ"};
     	let proj = this.attributes.proj.value;
     	cardTemplate.innerHTML = `
     		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Silkscreen|Ubuntu+Mono|Roboto+Mono">
@@ -25,7 +26,7 @@ class card extends HTMLElement {
 				</div> 
 				<div class="card-info-wrapper">
 					<p class="phunk-id mb-0 v3-txt">#${id}</p>
-					<h4 class="phunk-price mb-1">${price}Ξ</h4>
+					<h4 class="phunk-price mb-1">${price}</h4>
 				</div>
 			</a>
 		`
