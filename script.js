@@ -55,6 +55,12 @@ async function btns(x) {
   }
 };
 
+function getInfo() {
+  if (typeof(market) !== 'undefined') {
+     btns(window.location.hash.substr(1));
+  } else {setTimeout(getInfo, 250)}; 
+};
+
 //contract interactions
 // list
 async function offerPhunkForSale() {
@@ -125,5 +131,4 @@ async function withdrawEth() {
 }
 
 connectWallet();
-btns(window.location.hash.substr(1));
-console.log('js executed');
+getInfo();
