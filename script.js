@@ -47,7 +47,7 @@ async function btns(x) {
   if (a.isForSale){document.getElementById('price').textContent='Price: ' + pri + 'Ξ'}
 
   document.getElementById('owner').textContent=b.substr(0,4)+"..."+b.substr(-4);
-  document.getElementById('owner').href=`/profile#${b}`;
+  document.getElementById('owner').href=`/vphree2/profile#${b}`;
   if (c.hasBid){
     document.getElementById('top-bidder').textContent='High Bidder: ' + c.bidder.substr(0,4)+"..."+c.bidder.substr(-4);
     document.getElementById('top-bidder').href=`/vphree2/profile#${c.bidder}`;
