@@ -32,7 +32,7 @@ async function btns(x) {
   const c = await market.phunkBids(x).then(new Response);
 
   if(b == signer._address && a.isForSale == 0){togl('list-btn-togl')};    
-  if(b == signer._address && a.isForSale == 1) {togl('delist-btn')};
+  if(b == signer._address && a.isForSale == 1) {togl('delist-btn'); togl('delist-br')};
   if(b == signer._address && c.hasBid == 1) {togl('accept-bid-btn')};
   if(b != signer._address) {togl('buy-bid-buttons'); togl('bid-btn-togl');};
   if(b != signer._address && a.isForSale == 1) {togl('buy-bid-buttons'); togl('buy-btn');};
