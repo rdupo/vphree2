@@ -34,7 +34,7 @@
 					<input type="text" id="id" class="lite-v3-bg" name="id" minlength="1" maxlength="4" placeholder="Phunk ID..." onkeyup="pid()">
 					<button id="view" class="v3-bg" onclick="togl(['view','hide','filters']);">View Filters</button>
 					<button id="hide" class="d-none v3-bg" onclick="togl(['view','hide','filters']);">Hide Filters</button>
-					<select class="sorter v3-bg" type="text" name="sort" id="sort" onchange="ar();">
+					<select class="sorter v3-bg d-none" type="text" name="sort" id="sort" onchange="ar();">
 						<option disabled selected hidden>Sort</option>
 						<option value="pa">Price Low - High</option>
 						<option value="pd">Price High - Low</option>
