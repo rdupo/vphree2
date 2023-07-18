@@ -17,13 +17,14 @@
 <body>
 	<div class="page">
 		<comp-header></comp-header>
+		<div class="banner-wrapper" style="height: 4em;"></div>
 		<div class="content mx-4"> <!--start of nft info-->
-			<h2 id="title" class="mt-4 lite-v3-txt">v3phunk #---</h2>
-			<div class="row-wrapper d-block px-0 mt-1">
+			<div class="row-wrapper d-block px-0 my-4">
 				<div class="nft-info col-md-4 d-inline-block pl-0 align-top v3-bg">
 					<div id="img-wrapper"></div>
 				</div>
 				<div class="metadata col-md-4 d-inline-block align-top">
+					<h2 id="title" class="v3-txt">v3phunk #---</h2>
 					<div class="id-and-owner">
 						<p>Owner: <a id="owner">---</a></p>
 					</div>
@@ -31,11 +32,12 @@
 				</div>
 				<div class="contract-interactions col-md-3 d-inline-block pr-0 align-top">
 					<div class="price-and-bid">
+						<h2 class="lite-v3-txt">&nbsp;</h2>
 						<p id="price">Price: ---</p>
 						<p id="bid" class="d-none">Top Bid: ---</p>
 						<p class="d-none">Bidder: <a id="top-bidder">---</a></p>
 					</div>
-					<div class="buy-bid-buttons d-none">
+					<div class="d-none" id="buy-bid-buttons">
 						<button class="v3-bg w-100 p-1 my-2 brite d-none" 
 								onclick="buyPhunk();"
 								id="buy-btn">BUY</button>

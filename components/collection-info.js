@@ -18,7 +18,7 @@ class Cinfo extends HTMLElement {
 			<div class="collection-info mb-5 col-md-9 px-0">
 				<div class="d-flex">
 					<h1 class="v3-txt mr-auto">${title}</h1>
-					<div class="justify-content-end">
+					<div id="collection-links" class="justify-content-end">
 						<a href="${twitter}" target="_blank" class="sans-underline">
 							<img class="d-inline-flex align-middle my-3 mr-3 h-img-w brite" src="assets/twitter.png">
 						</a>
@@ -26,6 +26,14 @@ class Cinfo extends HTMLElement {
 							<img class="d-inline-flex align-middle my-3 h-img-w brite" src="assets/etherscan.png">
 						</a>
 					</div>
+				</div>
+				<div id="mobile-c-links">
+					<a href="${twitter}" target="_blank" class="sans-underline">
+						<img class="d-inline-flex align-middle my-3 mr-3 h-img-w brite" src="assets/twitter.png">
+					</a>
+					<a href="https://etherscan.io/address/${contract}" target="_blank" class="sans-underline">
+						<img class="d-inline-flex align-middle my-3 h-img-w brite" src="assets/etherscan.png">
+					</a>
 				</div>
 				<div class="collection-desc">
 					<p>${desc}</p>
