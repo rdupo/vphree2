@@ -1,6 +1,5 @@
 //set initial vars
-//const provider = new ethers.providers.Web3Provider(window.ethereum, "goerli");
-const provider = new ethers.providers.AlchemyProvider(network = 5, 'Xq9-5SRgOVU_UxK6uHdIk-oNvvO_n1iZ');
+const provider = new ethers.providers.Web3Provider(window.ethereum, "goerli");
 
 //contract info
 const marketAbi = [
