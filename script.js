@@ -64,18 +64,22 @@ function getInfo() {
 //contract interactions
 // list
 async function offerPhunkForSale() {
-  /*need to update to if/else
-  if (marketplace approved) {next}
-  else {setApproval} */
-
-  const setApproval = await v3Addy.setApprovalForAll(marketAddy, true);
-  await setApproval.wait();
-
-  const ethPrice = ethers.utils.parseEther(document.getElementById("sell-amt").value);
-  const listPrice = parseInt(ethPrice._hex);
-  const phunkId = phunkId = window.location.hash.substr(1);
-  const listPromise = market.offerPhunkForSale(phunkId, listPrice);
-  await listPromise;
+  const ap = await v3.isApprovedForAll(signer._address, marketAddy);
+  if (ap) {
+    const ethPrice = ethers.utils.parseEther(document.getElementById("sell-amt").value);
+    const listPrice = parseInt(ethPrice._hex);
+    const phunkId = phunkId = window.location.hash.substr(1);
+    const listPromise = market.offerPhunkForSale(phunkId, listPrice);
+    await listPromise;
+  } else {
+    const setApproval = await v3Addy.setApprovalForAll(marketAddy, true);
+    await setApproval.wait();
+    const ethPrice = ethers.utils.parseEther(document.getElementById("sell-amt").value);
+    const listPrice = parseInt(ethPrice._hex);
+    const phunkId = phunkId = window.location.hash.substr(1);
+    const listPromise = market.offerPhunkForSale(phunkId, listPrice);
+    await listPromise;
+  };
 }
 
 // delist
