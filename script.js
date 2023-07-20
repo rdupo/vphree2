@@ -21,7 +21,7 @@ async function connectWallet() {
       await window.ethereum.request({ method: 'eth_requestAccounts' });
       metaMaskProvider = new ethers.providers.Web3Provider(window.ethereum);
       metaMaskProvider.listAccounts().then((accounts) => {
-        signer = provider.getSigner(accounts[0]);
+        signer = metaMaskProvider.getSigner(accounts[0]);
       });
       const connectedAddress = await signer.getAddress();
       console.log('Connected Address:', connectedAddress);
