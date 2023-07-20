@@ -40,12 +40,16 @@ async function btns(x) {
   const b = await v3.ownerOf(x).then(new Response);
   const c = await market.phunkBids(x).then(new Response);
 
-  if(b == signer._address && a.isForSale == 0){togl('list-btn-togl')};    
-  if(b == signer._address && a.isForSale == 1) {togl('delist-btn'); togl('delist-br')};
-  if(b == signer._address && c.hasBid == 1) {togl('accept-bid-btn')};
-  if(b != signer._address) {togl('buy-bid-buttons'); togl('bid-btn-togl');};
-  if(b != signer._address && a.isForSale == 1) {togl('buy-bid-buttons'); togl('buy-btn');};
-  if(signer._address == c.bidder && c.hasBid == 1) {togl('cxl-bid-btn')};
+  if(typeof(signer)!=='undefined') {
+    if(b == signer._address && a.isForSale == 0){togl('list-btn-togl')};    
+    if(b == signer._address && a.isForSale == 1) {togl('delist-btn'); togl('delist-br')};
+    if(b == signer._address && c.hasBid == 1) {togl('accept-bid-btn')};
+    if(b != signer._address) {togl('buy-bid-buttons'); togl('bid-btn-togl');};
+    if(b != signer._address && a.isForSale == 1) {togl('buy-bid-buttons'); togl('buy-btn');};
+    if(signer._address == c.bidder && c.hasBid == 1) {togl('cxl-bid-btn')};
+  } else {
+    togl('not-connected');
+  }
 
   const bid = ethers.utils.formatEther(parseInt(c.value._hex));
   const pri = ethers.utils.formatEther(parseInt(a.minValue._hex));
