@@ -26,7 +26,7 @@ async function connectWallet() {
       const connectedAddress = await signer.getAddress();
       console.log('Connected Address:', connectedAddress);
     } catch {
-      console.error('MetaMask not found. Using fallback provider.');
+      console.log('MetaMask not found. Using fallback provider.');
     }
   }
 };
@@ -43,14 +43,12 @@ async function btns(x) {
   const c = await market.phunkBids(x).then(new Response);
 
   if(typeof(signer)!=='undefined') {
-    console.log('signer:' + signer._address + '; start btn logic');
     if(b == signer._address && a.isForSale == 0){togl('list-btn-togl')};    
     if(b == signer._address && a.isForSale == 1) {togl('delist-btn'); togl('delist-br')};
     if(b == signer._address && c.hasBid == 1) {togl('accept-bid-btn')};
     if(b != signer._address) {togl('buy-bid-buttons'); togl('bid-btn-togl');};
     if(b != signer._address && a.isForSale == 1) {togl('buy-btn');};
     if(signer._address == c.bidder && c.hasBid == 1) {togl('cxl-bid-btn')};
-    console.log('end btn logic');
   } else {
     togl('not-connected');
   }
@@ -75,7 +73,6 @@ async function btns(x) {
 function getInfo() {
   if (typeof(market) !== 'undefined') {
      btns(window.location.hash.substr(1));
-     console.log('btns run');
   } else {setTimeout(getInfo, 250)}; 
 };
 
